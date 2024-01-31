@@ -1,13 +1,17 @@
+
 function generateUrl(params) {
     let baseUrl = "http://testurl.bitfinx.com/?";
-  newUrl = Object.entries(params).map(([key, value]) => baseUrl += `${key}=${value}&`).slice(-1)?.[0]
-  
+  const [newUrl] = Object.entries(params).sort().map(([key, value]) =>{
+      if(value!== undefined && value !== null )
+      return baseUrl += `${key}=${value}&`
+  }
+  ).slice(-1)
     return newUrl.slice(0, -1);
   }
   
   const params = {
     width: 360,
-    height: 300,
+    height: 90,
     locale: "en",
     toolbar_bg: "",
     interval: "3h",
@@ -17,3 +21,4 @@ function generateUrl(params) {
   const res = generateUrl(params);
   
   console.log(res);
+  

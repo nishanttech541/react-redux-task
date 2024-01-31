@@ -79,7 +79,22 @@ pair: 'BTC_USD',
 
 // More parameters are planned to be added/removed later and the result should neglect the empty params (ex: should not include toolbar_bg in URL when its value is empty).
 
+## solution
+1) Create a function named generateUrl that retrun the generated url
+2) define base url
+3) Filter out null values (undefined or null parameters)
+4) Convert object into an array of key-value pairs using Object.entries
+5) Concatenate the base URL and the serialized parameters to generate the final URL.
+6) return generated url string
+
 ### Question 3
 
 >Apply some refactoring to improve the code of the following function. Explain the reasons behind your changes and which benefit they bring into the code.
+
+### solution
+
+1) Create a function named setupVolumeUnitInterface that encapsulates the functionality for valume interface
+2) Create a function named getVolumeUnit that encapsulates an object of volume units and returns the corresponding value based on the volume unit parameter passed as an argument.
+3) Replace nested if-else conditions with object-based switching for cleaner code.
+4) get values of volume with object
 
